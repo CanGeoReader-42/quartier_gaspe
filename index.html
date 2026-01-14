@@ -46,8 +46,11 @@
     drawnItems.addLayer(layer);
 
     var geojson = layer.toGeoJSON();
-    console.log(geojson);
-    alert("Shape recorded! Next we will connect this to a questionnaire.");
+    var geometry = encodeURIComponent(JSON.stringify(geojson));
+
+    var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSel-4PQcNh8s-5WhxJNtG4zXKguIIfRoJi5ulCORaIQSGmOcw/viewform?usp=pp_url&entry.1235106385=" + geometry;
+
+    window.open(formURL, "_blank");
   });
 </script>
 
